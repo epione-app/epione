@@ -1,17 +1,24 @@
-.DS_Store
-node_modules
-/www
 
-# local env files
-.env.local
-.env.*.local
+# Created by https://www.gitignore.io/api/code,vuejs,apachecordova
+# Edit at https://www.gitignore.io/?templates=code,vuejs,apachecordova
 
-# Log files
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+### ApacheCordova ###
+# Apache Cordova generated files and directories
+/src-cordova/platforms
+/src-cordova/plugins
+/public/cordova.js
+/src-cordova/platforms
+/src-cordova/plugins
+/public/cordova.js
 
-# Editor directories and files
+### Code ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+### Other editors
 .idea
 .vscode
 *.suo
@@ -20,12 +27,21 @@ yarn-error.log*
 *.sln
 *.sw?
 
-# Cordova
-/src-cordova/platforms
-/src-cordova/plugins
-/public/cordova.js
+### Vuejs ###
+# Recommended template: Node.gitignore
+node_modules/
+dist/
 
-# Cordova
-/src-cordova/platforms
-/src-cordova/plugins
-/public/cordova.js
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# End of https://www.gitignore.io/api/code,vuejs,apachecordova
+
+.DS_Store
+/www
+
+# local env files
+.env.local
+.env.*.local

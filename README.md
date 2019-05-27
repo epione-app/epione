@@ -1,4 +1,12 @@
-# epione-cordova
+# Epione
+
+<!--
+screenshots here
+<img width = 200>
+-->
+
+## What is it?
+Epione is a journal application designed to encourage self-expression within NZ's youth demographic as a way to cope with, and encourage seeking professional help for mental illnesses such as anxiety or depression.
 
 ## Project setup
 ```
