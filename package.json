@@ -1,0 +1,31 @@
+{
+  "name": "epione-cordova",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service cordova-prepare",
+    "build-android": "vue-cli-service cordova-build-android",
+    "serve-android": "vue-cli-service cordova-serve-android",
+    "build-browser": "vue-cli-service cordova-build-browser",
+    "serve-browser": "vue-cli-service cordova-serve-browser"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.4.4",
+    "@fortawesome/fontawesome-free": "^5.8.2",
+    "core-js": "^2.6.5",
+    "register-service-worker": "^1.6.2",
+    "roboto-fontface": "^0.10.0",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.3",
+    "vuetify": "^1.5.14",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.8.0",
+    "@vue/cli-plugin-pwa": "^3.8.0",
+    "@vue/cli-service": "^3.8.0",
+    "vue-cli-plugin-cordova": "^2.1.3",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
