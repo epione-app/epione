@@ -1,6 +1,4 @@
-<div style="text-align: center;">
-    <img src="docs/images/epione-logo.png" height="200" />
-</div>
+![Epione Logo](/docs/imgs/epione-logo.png)
 # Epione
 <!--
 screenshots here
