@@ -1,5 +1,7 @@
+<div style="text-align: center;">
+    <img src="docs/images/epione-logo.png" height="200" />
+</div>
 # Epione
-
 <!--
 screenshots here
 <img width = 200>
