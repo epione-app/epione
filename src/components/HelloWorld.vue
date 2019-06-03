@@ -15,7 +15,7 @@
 
       <v-flex mb-4>
         <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to Vuetify
+          Welcome to Vuetify {{dummy[0].name}}
         </h1>
         <p class="subheading font-weight-regular">
           For help and collaboration with other Vuetify developers,
@@ -85,6 +85,8 @@
 </template>
 
 <script>
+  import { mapGetters } from "vuex"
+
   export default {
     data: () => ({
       ecosystem: [
@@ -138,7 +140,10 @@
         }
 
       ]
-    })
+    }),
+    computed : {
+      ...mapGetters(["dummy"])
+    }
   }
 </script>
 

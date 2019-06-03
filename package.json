@@ -14,12 +14,15 @@
     "@babel/polyfill": "^7.4.4",
     "@fortawesome/fontawesome-free": "^5.8.2",
     "core-js": "^2.6.5",
+    "firebase": "^6.1.0",
     "register-service-worker": "^1.6.2",
     "roboto-fontface": "^0.10.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
+    "vuefire": "^2.0.0",
     "vuetify": "^1.5.14",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "vuexfire": "^3.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.8.0",
