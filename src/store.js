@@ -21,7 +21,7 @@ export default new Vuex.Store({
   actions: {
     bindDummy : firestoreAction(
       ({ bindFirestoreRef }) => {
-        return bindFirestoreRef('dummy', db.collection('dukmb'))
+        return bindFirestoreRef('dummy', db.collection('dummy'))
       } 
     )
   }
