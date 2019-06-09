@@ -49,3 +49,6 @@ yarn-error.log*
 
 # Firebase secrets file!
 src/firebase_conf.json
+
+# Jest coverage reports
+/coverage/
