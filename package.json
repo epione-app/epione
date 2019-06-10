@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
-    "@fortawesome/fontawesome-free": "^5.8.2",
     "core-js": "^2.6.5",
     "firebase": "^6.1.0",
     "register-service-worker": "^1.6.2",
@@ -27,6 +26,7 @@
     "vuexfire": "^3.0.0"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.9.0",
     "@vue/cli-plugin-babel": "^3.8.0",
     "@vue/cli-plugin-pwa": "^3.8.0",
     "@vue/cli-plugin-unit-jest": "^3.8.0",
@@ -42,9 +42,9 @@
   "jest": {
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "**/*{js,vue}", 
+      "**/*{js,vue}",
       "!**/*{config.js}",
-      "!**/node_modules/**", 
+      "!**/node_modules/**",
       "!**/src-cordova/**",
       "!**/src/assets/**",
       "!**/src/plugins/**"

@@ -8,22 +8,26 @@
       </v-toolbar>
     <v-content>
       <router-view/>
-      <CrisisButton />
     </v-content>
+    <CrisisButton />
  </v-app>
 </template>
 
 <script>
+import CrisisButton from '@/components/CrisisButton.vue'
 
 export default {
   name: 'App',
   data () {
     return {
-      //
+      fab: false
     }
   },
   created : function () {
     this.$store.dispatch("bindDummy");
+  },
+  components: {
+    CrisisButton
   }
 }
 </script>
