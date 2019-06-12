@@ -28,6 +28,7 @@
             <v-card-actions>
               <v-spacer></v-spacer>
               <v-btn flat color="primary">Login</v-btn>
+              <v-btn flat color="primary">Register</v-btn>
             </v-card-actions>
           </v-card>
         </v-flex>
@@ -43,6 +44,11 @@ export default {
   }),
   props: {
     source: String
+  },
+  methods: {
+    login: function() {
+      // router.
+    }
   }
 };
 </script>
