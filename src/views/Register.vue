@@ -26,7 +26,7 @@
                 ></v-text-field>
                 <v-text-field
                   solo
-				  v-model="pword"
+				  v-model="password"
                   prepend-icon="fa-key"
                   name="password"
                   label="Password"
@@ -59,26 +59,29 @@
 </template>
 
 <script>
-import auth from 'firebase'
+import firebase from 'firebase'
+import auth from 'firebase/'
 
 export default {
   data: () => ({
-    drawer: null
+	drawer: null,
+	email: '',
+	password: '', 
   }),
   props: {
     source: String
   },
   methods: {
 	createAccount: function() {
-		auth().signInWithEmailAndPassword(email).then(
+		firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
 			function(user) {
-				alert("Account created!");
+				alert("User created!")
 			},
-			function(error){
-				alert("Account Creation Failed!" + error.message);
+			function(err) {
+				alert(err.message)
 			}
-		)
-	} 
+		);
+	}
   },
 };
 </script>
