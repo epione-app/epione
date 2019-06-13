@@ -26,9 +26,11 @@
               </v-form>
             </v-card-text>
             <v-card-actions>
+              <router-link to="/register" replace>
+                <v-btn flat color="info">Register</v-btn>
+              </router-link>
               <v-spacer></v-spacer>
-              <v-btn flat color="primary">Login</v-btn>
-              <v-btn flat color="primary">Register</v-btn>
+              <v-btn @click="login" color="primary">Login</v-btn>
             </v-card-actions>
           </v-card>
         </v-flex>
@@ -47,7 +49,7 @@ export default {
   },
   methods: {
     login: function() {
-      // router.
+      this.$router.replace('home')
     }
   }
 };
