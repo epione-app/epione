@@ -10,8 +10,8 @@
               color="primary"
               slider-color="warning"
               >
-              <!-- <v-tab :to="{ name: 'login' }" replace>Login</v-tab>
-              <v-tab :to="{ name: 'register'}" replace>Register</v-tab> -->
+              <v-tab :to="{ name: 'login' }" replace>Login</v-tab>
+              <v-tab :to="{ name: 'register'}" replace>Register</v-tab>
             </v-tabs>
             <router-view></router-view> 
           </v-card>
