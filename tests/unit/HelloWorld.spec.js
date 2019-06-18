@@ -16,8 +16,4 @@ describe("HelloWorld.vue", () => {
     test("Mounts correctly", () => {
         expect(wrapper.isVueInstance).toBeTruthy()
     });
-    test("idk what i'm doing", () => {
-        wrapper
-        expect()
-    })
 });

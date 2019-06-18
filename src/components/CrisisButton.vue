@@ -1,7 +1,7 @@
 <template>
   <v-speed-dial
     v-model="fab"
-    absolute
+    fixed
     bottom
     right
     direction="top"
@@ -13,11 +13,9 @@
         <v-icon>fa-times-circle</v-icon>
       </v-btn>
     </template>
-    <router-link to="auth">
-      <v-btn fab dark color="info">
-        <v-icon>fa-phone-alt</v-icon>
-      </v-btn>
-    </router-link>
+    <v-btn fab dark color="info">
+      <v-icon>fa-phone-alt</v-icon>
+    </v-btn>
     <v-btn fab dark color="info">
       <v-icon>fa-sms</v-icon>
     </v-btn>
