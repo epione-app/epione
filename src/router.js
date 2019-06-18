@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import Login from './components/Login.vue'
-import Register from './components/Register.vue'
+import Login from './components/ui/Login.vue'
+import Register from './components/ui/Register.vue'
 import Auth from './views/Auth.vue'
 import { register } from 'register-service-worker';
 

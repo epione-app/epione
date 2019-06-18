@@ -1,17 +1,12 @@
 <!-- root element -->
 <template>
   <v-app>
-    <v-toolbar app>
+    <v-toolbar app flat>
       <v-toolbar-title class="headline text-uppercase">
         <span class="font-weight-light">Epione;</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <router-link to="/auth/login">
-        <v-btn flat>Login</v-btn>
-      </router-link>
-      <router-link to="/auth/register">
-        <v-btn flat>Register</v-btn>
-      </router-link>
+      <AppBarItems />
     </v-toolbar>
     <v-content>
       <router-view/>
@@ -21,7 +16,8 @@
 </template>
 
 <script>
-import CrisisButton from "@/components/CrisisButton.vue";
+import CrisisButton from "@/components/ui/CrisisButton.vue";
+import AppBarItems from "@/components/ui/AppBarItems.vue";
 
 export default {
   name: "App",
@@ -34,7 +30,8 @@ export default {
     this.$store.dispatch("bindDummy");
   },
   components: {
-    CrisisButton
+    CrisisButton,
+    AppBarItems,
   }
 };
 </script>
