@@ -45,6 +45,7 @@
       "**/*{js,vue}",
       "!**/*{config.js}",
       "!**/node_modules/**",
+      "!**/coverage/**",
       "!**/src-cordova/**",
       "!**/src/assets/**",
       "!**/src/plugins/**"
