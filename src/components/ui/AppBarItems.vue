@@ -6,8 +6,8 @@ for example: register and login buttons shouldn't be shown when the user is logg
 <template>
   <v-toolbar-items>
     <!-- unauthed users should see these buttons -->
-    <v-btn flat to="/auth/login">Login</v-btn>
-    <v-btn flat to="/auth/register">Register</v-btn>
+    <v-btn flat router to="/auth/login">Login</v-btn>
+    <v-btn flat router to="/auth/register">Register</v-btn>
     <!-- eos -->
 
     <!-- authed users should see this on the home screen -->

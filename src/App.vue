@@ -1,7 +1,7 @@
 <!-- root element -->
 <template>
   <v-app>
-    <v-toolbar app flat>
+    <v-toolbar app >
       <v-toolbar-title class="headline text-uppercase">
         <span class="font-weight-light">Epione;</span>
       </v-toolbar-title>
@@ -10,14 +10,16 @@
     </v-toolbar>
     <v-content>
       <router-view/>
+      <CrisisButton/>
     </v-content>
-    <CrisisButton/>
+    <BottomNav />
   </v-app>
 </template>
 
 <script>
 import CrisisButton from "@/components/ui/CrisisButton.vue";
 import AppBarItems from "@/components/ui/AppBarItems.vue";
+import BottomNav from '@/components/ui/BottomNav.vue'
 
 export default {
   name: "App",
@@ -32,6 +34,7 @@ export default {
   components: {
     CrisisButton,
     AppBarItems,
+    BottomNav,
   }
 };
 </script>
