@@ -25,7 +25,7 @@
     </v-card-text>
     <v-card-actions>
       <v-spacer></v-spacer>
-      <v-btn @click="loginWithEmail" color="primary">Login</v-btn>
+      <v-btn @click="loginWithEmail" round color="accent">Login</v-btn>
     </v-card-actions>
   </v-card>
 </template>

@@ -43,7 +43,7 @@
     </v-card-text>
     <v-card-actions>
       <v-spacer></v-spacer>
-      <v-btn @click="createAccount" color="primary">Register</v-btn>
+      <v-btn @click="createAccount" round color="accent">Register</v-btn>
     </v-card-actions>
   </v-card>
 </template>

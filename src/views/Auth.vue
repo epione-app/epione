@@ -7,8 +7,9 @@
             <v-tabs
               v-model="tabs"
               centered
+              dark
               color="primary"
-              slider-color="warning"
+              slider-color="accent"
               >
               <v-tab :to="{ name: 'login' }" replace>Login</v-tab>
               <v-tab :to="{ name: 'register'}" replace>Register</v-tab>
