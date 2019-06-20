@@ -23,7 +23,7 @@ import BottomNav from '@/components/ui/BottomNav.vue'
 
 export default {
   name: "App",
-  data() {
+  data: () => {
     return {
       fab: false
     };

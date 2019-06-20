@@ -4,6 +4,7 @@
     fixed
     bottom
     right
+    style="z-index: 5;"
     direction="top"
     transition="slide-y-reverse-transition"
   >

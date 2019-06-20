@@ -1,5 +1,5 @@
 <template>
-    <v-bottom-nav app absolute mandatory :active.sync="bottomNav">
+    <v-bottom-nav app fixed mandatory :active.sync="bottomNav" :value="true">
         <v-btn 
             color="accent"
             flat
