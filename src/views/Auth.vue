@@ -30,8 +30,8 @@ export default {
       { id: 0, name: 'register', route: 'register'},
       { id: 1, name: 'login', route: 'login'},
     ]
-  }),
-  props: {
-  }
+  })
+  //props: {
+  //}
 };
 </script>

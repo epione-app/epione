@@ -1,5 +1,5 @@
 <template>
-    <v-bottom-nav app fixed mandatory :active.sync="bottomNav" :value="true">
+    <v-bottom-nav app fixed mandatory :active.sync="bottomNav" :value="authed">
         <v-btn 
             color="accent"
             flat
@@ -32,6 +32,9 @@ export default {
         return {
             bottomNav: 'home',
         }
+    },
+    props: {
+        authed: Boolean,
     }
 }
 </script>

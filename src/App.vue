@@ -10,9 +10,9 @@
     </v-toolbar>
     <v-content>
       <router-view/>
-      <CrisisButton/>
+      <CrisisButton :authed="authed"/>
     </v-content>
-    <BottomNav />
+    <BottomNav :authed="authed"/>
   </v-app>
 </template>
 
@@ -25,7 +25,8 @@ export default {
   name: "App",
   data: () => {
     return {
-      fab: false
+      fab: false,
+      authed: false
     };
   },
   created: function() {

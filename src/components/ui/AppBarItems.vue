@@ -18,7 +18,7 @@ for example: register and login buttons shouldn't be shown when the user is logg
 <script>
 export default {
   data: () => {
-    return;
+    return {};
   }
 };
 </script>

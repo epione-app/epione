@@ -13,9 +13,12 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
+      path: '/home',
       name: 'home',
-      component: Home
+      component: Home,
+      meta: {
+        requiresAuth: true,
+      }
     },
     {
       path: '/about',
@@ -45,3 +48,20 @@ export default new Router({
     },
   ]
 })
+
+// only allow authed users to see auth required pages.
+router.beforeEach((to, from, next) => {
+  const user = firebase.auth().currentUser;
+  const requiresAuth = to.matched.some(
+    record => record.requiresAuth
+  ) 
+
+  // if a user isn't logged in and tries to access a page with auth required,
+  // redirect to the login page.
+  if (requiresAuth && !user) { next ('/auth/login') }
+  // if an authed user trys to access a page that doesn't require auth, redirect to
+  // the home page
+  else if (!requiresAuth && user) { next ('/home') }
+  // else, go to the page
+  else next();
+});

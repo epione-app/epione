@@ -5,6 +5,7 @@
     bottom
     right
     style="z-index: 5;"
+    :style="{ bottom: authed ? '72px' : null }"
     direction="top"
     transition="slide-y-reverse-transition"
   >
@@ -32,6 +33,7 @@ export default {
     return {
       fab: false
     };
-  }
+  },
+  props: { authed: Boolean }
 };
 </script>
