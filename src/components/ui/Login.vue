@@ -22,6 +22,21 @@
           type="password"
         ></v-text-field>
       </v-form>
+      <v-divider />
+      <!-- Begin OAuth login buttons -->
+      <v-btn round dark color="#dd4b39" big block> 
+        <v-icon left dark>fab fa-google</v-icon>
+        Sign in with Google
+      </v-btn>
+      <v-btn round dark color="#1877f2" big block> 
+        <v-icon left fa-facebook>fab fa-facebook</v-icon>
+        Sign in with Facebook
+      </v-btn>
+      <!-- TODO: Twitter OAuth, pending approval-->
+      <v-btn round dark color="#1da1f3" big block disabled> 
+        <v-icon left fa-facebook>fab fa-twitter</v-icon>
+        Sign in with Twitter
+      </v-btn>
     </v-card-text>
     <v-card-actions>
       <v-spacer></v-spacer>
@@ -31,25 +46,28 @@
 </template>
 
 <script>
-import firebase from "firebase";
-import auth from "firebase/auth";
+import { auth } from "@/plugins/firebase.js";
+import router from "@/router.js";
+
 export default {
   data: () => ({
     drawer: null,
     email: "",
-    pword: "",
+    pword: ""
   }),
   methods: {
     loginWithEmail: function() {
       firebase.auth().signInWithEmailAndPassword(this.email, this.pword).then(
         function (user) {
+          router.push({name: 'home'});
           alert("Succesfully logged in!");
-        },
+        }
+      ).catch(
         function (error) {
           alert("Sign in failed: " + error.message);
-        },
+        }
       )
-    },
+    }
   }
 };
 </script>

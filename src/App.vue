@@ -19,7 +19,10 @@
 <script>
 import CrisisButton from "@/components/ui/CrisisButton.vue";
 import AppBarItems from "@/components/ui/AppBarItems.vue";
-import BottomNav from '@/components/ui/BottomNav.vue'
+import BottomNav from '@/components/ui/BottomNav.vue';
+import firebase from '@/plugins/firebase.js';
+
+window.firebase = firebase;
 
 export default {
   name: "App",

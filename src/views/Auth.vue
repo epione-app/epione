@@ -5,7 +5,6 @@
         <v-flex xs12 sm8 md4>
           <v-card class="elevation-1">
             <v-tabs
-              v-model="tabs"
               centered
               dark
               color="primary"
@@ -14,7 +13,9 @@
               <v-tab :to="{ name: 'login' }" replace>Login</v-tab>
               <v-tab :to="{ name: 'register'}" replace>Register</v-tab>
             </v-tabs>
-            <router-view></router-view> 
+            <v-scale-transition mode="out-in">
+              <router-view></router-view> 
+            </v-scale-transition>
           </v-card>
         </v-flex>
       </v-layout>
@@ -26,12 +27,6 @@
 export default {
   data: () => ({
     drawer: null,
-    tabs: [
-      { id: 0, name: 'register', route: 'register'},
-      { id: 1, name: 'login', route: 'login'},
-    ]
   })
-  //props: {
-  //}
 };
 </script>
