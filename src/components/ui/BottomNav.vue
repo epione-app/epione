@@ -4,6 +4,7 @@
             color="accent"
             flat
             value="diary"
+            :to="{ name: 'journalHome' }"
         >
             <span>Journal</span>
             <v-icon>fa-book</v-icon>
@@ -12,6 +13,8 @@
             color="accent"
             flat
             value="home"
+            :to="{ name: 'home' }"
+            replace
         >
             <span>Home</span>
             <v-icon>fa-home</v-icon>
@@ -20,6 +23,7 @@
             color="accent"
             flat
             value="coping"
+            :to="{ name: 'copingHome' }"
         >
             <span>Coping Tools</span>
             <v-icon>fa-life-ring</v-icon>

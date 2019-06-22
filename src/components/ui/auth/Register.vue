@@ -75,18 +75,19 @@ export default {
     createAccount: function() {
       if (!this.$refs.form.validate()) { return; }
 
-      firebase
-        .auth()
-        .createUserWithEmailAndPassword(this.email, this.password)
-        .then(
-          function(user) {
-            alert("User created!");
+      const displayName = this.uname;
 
-          },
-          function(err) {
+      auth.createUserWithEmailAndPassword(this.email, this.password)
+        .then((user) => {
+            alert("User created!");
+            auth.currentUser.updateProfile({ displayName })
+            .catch(function(error) {
+              alert("An error happened: " + error)
+            });
+        })
+        .catch((err) => {
             alert(err.message);
-          }
-        );
+        });
     }
   }
 };

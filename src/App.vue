@@ -6,10 +6,12 @@
         <span class="font-weight-light">Epione;</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <AppBarItems />
+      <AppBarItems :authed="authed" />
     </v-toolbar>
     <v-content>
-      <router-view/>
+      <v-slide-y-reverse-transition mode="out-in">
+        <router-view/>
+      </v-slide-y-reverse-transition>
       <CrisisButton :authed="authed"/>
     </v-content>
     <BottomNav :authed="authed"/>
@@ -20,20 +22,25 @@
 import CrisisButton from "@/components/ui/CrisisButton.vue";
 import AppBarItems from "@/components/ui/AppBarItems.vue";
 import BottomNav from '@/components/ui/BottomNav.vue';
-import firebase from '@/plugins/firebase.js';
+import { mapGetters } from 'vuex';
 
+// TODO: Remove Debug Lines
+import firebase from '@/plugins/firebase.js';
 window.firebase = firebase;
 
 export default {
   name: "App",
   data: () => {
     return {
-      fab: false,
-      authed: false
+      fab: false
     };
   },
-  created: function() {
-    this.$store.dispatch("bindDummy");
+  computed : {
+    authed: function() { return !!this.user; },
+    ...mapGetters([
+      'user',
+      'userName'
+    ])
   },
   components: {
     CrisisButton,

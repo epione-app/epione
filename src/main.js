@@ -17,22 +17,31 @@ new Vue({
   render: h => h(App)
 }).$mount('#app')
 
-// authorised 
+// Auth event listener (Firebase) 
 auth.onAuthStateChanged(function(user) {
-  if (user) {
-    // User is signed in.
-    var displayName = user.displayName;
-    var email = user.email;
-    var emailVerified = user.emailVerified;
-    var photoURL = user.photoURL;
-    var isAnonymous = user.isAnonymous;
-    var uid = user.uid;
-    var providerData = user.providerData;
-    // ...
+  // uses vuex to store the user in the application state
+  if (user) { 
+    store.dispatch("setUser",user); 
+    store.dispatch("bindUserDoc",user.uid) 
 
-  } else {
-    // User is signed out.
-    // ...
+    // Check if we can be here
+    const requiresAnon = router.currentRoute.matched.some(
+      record => record.meta.requiresAnon
+    )
+    if (requiresAnon) router.push({name: 'home'});
   }
-});
+  // on logout sets the user in the application state to null
+  else { 
+    store.dispatch("setUser",null); 
+    router.push('/auth'); 
+    store.dispatch("unbindUserDoc");
 
+    // Check if we can be here
+    const requiresAuth = router.currentRoute.matched.some(
+      record => record.meta.requiresAuth
+    )
+    if (requiresAuth) router.push({name:'login'});
+  }
+
+
+});

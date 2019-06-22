@@ -13,6 +13,7 @@
               <v-tab :to="{ name: 'login' }" replace>Login</v-tab>
               <v-tab :to="{ name: 'register'}" replace>Register</v-tab>
             </v-tabs>
+            <!-- transitions between routes, thought looked nicer -->
             <v-scale-transition mode="out-in">
               <router-view></router-view> 
             </v-scale-transition>

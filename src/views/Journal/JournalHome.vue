@@ -15,5 +15,8 @@
 
 <script>
   export default {
+    computed: {
+      page: function () { return this.$route.params.page || 1},
+    }
   }
 </script>
