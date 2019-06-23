@@ -27,7 +27,7 @@ const router = new Router({
     {
       path: '/journal/:page(\\d+)?',
       name: 'journalHome',
-      component: () => import(/* webpackChunkName: "journal" */ './views/Journal/JournalHome.vue'),
+      component: () => import(/* webpackChunkName: "journal" */ './views/journal/JournalHome.vue'),
       meta: {
         requiresAuth: true,
       }
@@ -35,7 +35,7 @@ const router = new Router({
     {
       path: '/journal/entry/:id',
       name: 'journalEntry',
-      component: () => import(/* webpackChunkName: "journal" */ './views/Journal/JournalEntry.vue'),
+      component: () => import(/* webpackChunkName: "journal" */ './views/journal/JournalEntry.vue'),
       meta: {
         requiresAuth: true,
       }

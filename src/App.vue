@@ -26,7 +26,6 @@ import { mapGetters } from 'vuex';
 
 // TODO: Remove Debug Lines
 import firebase from '@/plugins/firebase.js';
-window.firebase = firebase;
 
 export default {
   name: "App",

@@ -1,5 +1,5 @@
 <template>
-    <h1>You done did fucked up</h1>
+    <h1>You shouldn't be here, how'd you get here!? Tell a dev.</h1>
 </template>
 
 <script>

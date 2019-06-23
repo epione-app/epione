@@ -1,7 +1,7 @@
 <template>
 <v-container>
   <v-layout align-center justify-center>
-    <v-card class="">
+    <v-card>
       <v-card-title>
         <v-icon>fa-home</v-icon>
       </v-card-title>

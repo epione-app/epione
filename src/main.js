@@ -20,6 +20,7 @@ new Vue({
 // Auth event listener (Firebase) 
 auth.onAuthStateChanged(function(user) {
   // uses vuex to store the user in the application state
+  // as well as binding a reference to the user document in Firebase
   if (user) { 
     store.dispatch("setUser",user); 
     store.dispatch("bindUserDoc",user.uid) 
@@ -30,13 +31,15 @@ auth.onAuthStateChanged(function(user) {
     )
     if (requiresAnon) router.push({name: 'home'});
   }
-  // on logout sets the user in the application state to null
+  // on logout sets the user in the application state to null,
+  // redirects to the Auth page,
+  // and unbinds the user document from Firebase
   else { 
     store.dispatch("setUser",null); 
     router.push('/auth'); 
     store.dispatch("unbindUserDoc");
 
-    // Check if we can be here
+    // check if we can be here
     const requiresAuth = router.currentRoute.matched.some(
       record => record.meta.requiresAuth
     )

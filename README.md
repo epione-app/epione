@@ -1,4 +1,4 @@
-![Epione Logo](/docs/imgs/epione-logo.png)
+![Epione Logo](/src/assets/logo.svg)
 # Epione
 <!--
 screenshots here
