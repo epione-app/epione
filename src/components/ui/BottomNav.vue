@@ -5,6 +5,7 @@
             flat
             value="diary"
             :to="{ name: 'journalHome' }"
+            relpace
         >
             <span>Journal</span>
             <v-icon>fa-book</v-icon>
@@ -24,6 +25,7 @@
             flat
             value="coping"
             :to="{ name: 'copingHome' }"
+            replace
         >
             <span>Coping Tools</span>
             <v-icon>fa-life-ring</v-icon>

@@ -5,6 +5,8 @@ import Home from '@/views/Home.vue';
 import Auth from '@/views/Auth.vue';
 import Login from '@/components/ui/auth/Login.vue';
 import Register from '@/components/ui/auth/Register.vue';
+import JournalEntry from '@/views/journal/JournalEntry.vue';
+import JournalHome from '@/views/journal/JournalHome.vue';
 import Error404 from '@/views/Error404.vue';
 import { auth } from '@/plugins/firebase.js';
 import { register } from 'register-service-worker';

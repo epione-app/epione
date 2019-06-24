@@ -14,13 +14,13 @@
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn flat color="accent">New Note</v-btn>
+            <v-btn outline color="primary">New Note</v-btn>
           </v-card-actions>
         </v-card>
       </v-flex>
     </v-layout>
     <v-layout align-start justify-center>
-      <v-flex xs12 md8 lg6 pa-2 my-2>
+      <v-flex xs12 md8 lg6>
           <JournalCard class="my-2" v-for="entry in entries" :key="entry[0]" :entry="entry"/>
       </v-flex>
     </v-layout>
@@ -43,6 +43,7 @@ export default {
   },
   methods: {
     createNewNote : function() {
+      
     },
   },
   components: {
