@@ -14,18 +14,23 @@
           }}
         </span>
       <v-spacer />
-      <v-btn outline color="accent">Delete Note</v-btn>
+      <v-btn @click="deleteNote" outline color="accent">Delete Note</v-btn>
       <v-btn color="primary">Edit Note</v-btn>
     </v-card-actions>
   </v-card>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+import firebase from 'firebase/app'
+import { firestore } from '@/plugins/firebase.js';
+
 export default {
   props: {
     entry: undefined
   },
   computed: {
+    ...mapGetters(["user"]),
     id : function() { return this.entry[0]; },
     journal : function() { return this.entry[1]; },
 
@@ -38,8 +43,17 @@ export default {
     }
   },
   methods: {
-    
-  }
+    deleteNote: function () {
+      var journals = {};
+      journals[this.id] = firebase.firestore.FieldValue.delete()
+      firestore.collection('users')
+      .doc(this.user.uid)
+      .set(
+        {journals : journals },
+        { merge : true }
+      )
+    },
+  },
 };
 </script>
 

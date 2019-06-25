@@ -14,36 +14,102 @@
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn outline color="primary">New Note</v-btn>
+            <v-btn outline @click="newNoteDialog = true" color="primary">New Note</v-btn>
           </v-card-actions>
         </v-card>
       </v-flex>
     </v-layout>
     <v-layout align-start justify-center>
       <v-flex xs12 md8 lg6>
-          <JournalCard class="my-2" v-for="entry in entries" :key="entry[0]" :entry="entry"/>
+        <JournalCard class="my-2" v-for="entry in entries" :key="entry[0]" :entry="entry"/>
       </v-flex>
     </v-layout>
+    <v-dialog v-model="newNoteDialog" persistent max-width="500">
+      <v-card>
+        <v-card-title class="headline">New Note</v-card-title>
+        <v-card-text>
+          <v-form>
+            <v-text-field
+            required
+            solo
+            v-model="name"
+            name="journalTitle"
+            label="Journal Title"
+            type="text"></v-text-field>
+            <v-textarea
+            required
+            outline
+            v-model="entry"
+            name="journalEntry"
+            label="Entry"
+            type="text"
+            rows=5
+            auto-grow
+            ></v-textarea>
+          </v-form>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn 
+            outline 
+            @click="newNoteDialog = false" 
+            color="accent">
+            Cancel</v-btn>
+          <v-btn @click="submitNewNote" color="primary">Save</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </v-container>
 </template>
 
 <script>
-import JournalCard from '@/components/ui/JournalCard.vue';
-import { mapGetters } from 'vuex';
+import JournalCard from "@/components/ui/JournalCard.vue";
+import firebase from 'firebase/app'
+import { firestore }from '@/plugins/firebase.js';
+import { mapGetters } from "vuex";
 
 export default {
+  data () {
+    return {
+      newNoteDialog: false,
+      name: "",
+      entry: "",
+    }
+  },
   computed: {
-    ...mapGetters(['userJournals']),
+    ...mapGetters(["userJournals", "user"]),
     page: function() {
       return this.$route.params.page || 1;
     },
     entries: function() {
-      return Object.entries( this.userJournals );
-    }
+      return this.userJournals ? Object.entries(this.userJournals) : [];
+    },
   },
   methods: {
-    createNewNote : function() {
-      
+    createNewNote: function() {
+      this.newNoteDialog = true;
+    },
+    submitNewNote: function() {
+      const timeStamp = firebase.firestore.FieldValue.serverTimestamp();
+      const journalId = Date.now();
+      // initalising as empty map to dynamically assign key
+      var journals = {};
+      // setting journal object for pushing to firestore
+      journals[journalId] = {
+        title: this.name,
+        body: this.entry,
+        // programmatically set timestamp from Firebase server time
+        timestamp: timeStamp,
+      }
+      firestore.collection('users')
+      .doc(this.user.uid)
+      .set({
+        journals
+      }, 
+        { merge: true }
+      )
+
+      this.newNoteDialog = false;
     },
   },
   components: {

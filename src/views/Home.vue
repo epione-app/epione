@@ -2,11 +2,10 @@
 <v-container>
   <v-layout align-center justify-center>
     <v-card>
-      <v-card-title>
-        <v-icon>fa-home</v-icon>
+      <v-card-title class="headline">
+        Welcome to Epione, {{ userName }}
       </v-card-title>
       <v-card-text>
-        Home - Placeholder
       </v-card-text>
     </v-card>
   </v-layout>
@@ -14,6 +13,11 @@
 </template>
 
 <script>
+  import firebase from 'firebase/app'
+  import { mapGetters } from 'vuex'
   export default {
+    computed: {
+      ...mapGetters(["userName"])
+    }
   }
 </script>

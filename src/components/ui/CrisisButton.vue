@@ -36,7 +36,7 @@
         <v-card-text>Body Text</v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="green darken-1" flat @click="callModal = false">Agree</v-btn>
+          <v-btn color="green darken-1" flat @click="callModal = false">Dismiss</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -47,21 +47,18 @@
         <v-card-text>Body Text</v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="green darken-1" flat @click="smsModal = false">Agree</v-btn>
+          <v-btn color="green darken-1" flat @click="smsModal = false">Dismiss</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
 
     <v-dialog v-model="webModal" persistent max-width="290">
-      <template v-slot:activator="{ on }">
-  
-      </template>
       <v-card>
         <v-card-title class="headline">Web Headline</v-card-title>
         <v-card-text>Body Text</v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="green darken-1" flat @click="webModal = false">Agree</v-btn>
+          <v-btn color="green darken-1" flat @click="webModal = false">Dismiss</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
