@@ -24,7 +24,6 @@ import AppBarItems from "@/components/ui/AppBarItems.vue";
 import BottomNav from '@/components/ui/BottomNav.vue';
 import { mapGetters } from 'vuex';
 
-// TODO: Remove Debug Lines
 import firebase from '@/plugins/firebase.js';
 
 export default {

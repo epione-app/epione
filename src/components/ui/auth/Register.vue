@@ -79,9 +79,10 @@ export default {
 
       auth.createUserWithEmailAndPassword(this.email, this.password)
         .then((user) => {
-            alert("User created!");
-            auth.currentUser.updateProfile({ displayName })
-            .catch(function(error) {
+            auth.currentUser.updateProfile({ displayName }),
+            alert("User created!")
+        }
+            .catch( function (error) {
               alert("An error happened: " + error)
             });
         })
