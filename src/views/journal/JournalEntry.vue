@@ -22,7 +22,6 @@
   export default {
     computed: {
       id: function () { return this.$route.params.id},
-      // Wait, woops - I'm getting confused with Entry and JournalCard. JournalCard is component. :3
 
       ...mapGetters([
         'userJournals',

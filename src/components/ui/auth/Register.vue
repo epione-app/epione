@@ -81,10 +81,6 @@ export default {
         .then((user) => {
             auth.currentUser.updateProfile({ displayName }),
             alert("User created!")
-        }
-            .catch( function (error) {
-              alert("An error happened: " + error)
-            });
         })
         .catch((err) => {
             alert(err.message);

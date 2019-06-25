@@ -2,8 +2,8 @@
   <v-container grid-list-xl>
     <v-layout align-start justify-center>
       <v-flex xs12 md8 lg6>
-        <v-card>
-          <v-card-title class="headline">Welcome to the Journal Section</v-card-title>
+        <v-card color="primary" dark>
+          <v-card-title class="headline" >Welcome to the Journal Section</v-card-title>
           <v-card-text>
             <div
               class="body-1"
@@ -14,7 +14,7 @@
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn outline @click="newNoteDialog = true" color="primary">New Note</v-btn>
+            <v-btn outline @click="newNoteDialog = true">New Note</v-btn>
           </v-card-actions>
         </v-card>
       </v-flex>

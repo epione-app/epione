@@ -53,6 +53,21 @@ export default {
         { merge : true }
       )
     },
+    /// TODO : Implement edit button functionality
+    // editNote: function () {
+    //   var journals = {};
+    //   journals[this.id] = {
+    //     title: '',
+    //     body: '',
+    //   }
+
+    //   firestore.collection('users')
+    //   .doc(this.user.id)
+    //   .set(
+    //     { journals },
+    //     { merge : true }
+    //   )
+    // }
   },
 };
 </script>
