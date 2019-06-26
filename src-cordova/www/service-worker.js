@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.eaaf615f7629f7acd52631fd0525d456.js"
+  "/precache-manifest.496d6a48d8e17ff1107630785c2f6143.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "epione-cordova"});

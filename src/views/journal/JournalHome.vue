@@ -59,6 +59,15 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
+    <div class="text-xs-center">
+      <v-pagination 
+        round 
+        v-model="page" 
+        :length="5" 
+        @next="this.page + 1" 
+        @prev="this.page - 1" 
+      />
+    </div>
   </v-container>
 </template>
 
@@ -74,6 +83,7 @@ export default {
       newNoteDialog: false,
       name: "",
       entry: "",
+      page: 1,
     }
   },
   computed: {
@@ -82,7 +92,10 @@ export default {
       return this.$route.params.page || 1;
     },
     entries: function() {
-      return this.userJournals ? Object.entries(this.userJournals) : [];
+      return this.userJournals ? 
+      // pagination change, still wip
+      Object.entries(this.userJournals).slice(((this.page - 1) * 6), (this.page * 6)) 
+      : [];
     },
   },
   methods: {
@@ -98,7 +111,7 @@ export default {
       journals[journalId] = {
         title: this.name,
         body: this.entry,
-        // programmatically set timestamp from Firebase server time
+        // programmatically set timestamp from firebase server time
         timestamp: timeStamp,
       }
       firestore.collection('users')

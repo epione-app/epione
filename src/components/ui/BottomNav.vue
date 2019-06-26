@@ -1,7 +1,7 @@
 <template>
-    <v-bottom-nav app fixed mandatory :active.sync="bottomNav" :value="authed">
+    <v-bottom-nav app fixed shift mandatory :active.sync="bottomNav" :value="authed">
         <v-btn 
-            color="accent"
+            color="primary"
             flat
             value="diary"
             :to="{ name: 'journalHome' }"
@@ -21,7 +21,7 @@
             <v-icon>fa-home</v-icon>
         </v-btn>
         <v-btn
-            color="accent"
+            color="ternary"
             flat
             value="coping"
             :to="{ name: 'copingHome' }"

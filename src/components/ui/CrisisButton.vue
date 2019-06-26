@@ -30,9 +30,9 @@
       </v-btn>
     </v-speed-dial>
     
-    <v-dialog v-model="callModal" persistent max-width="290">
-      <v-card>
-        <v-card-title class="headline">Call Headline</v-card-title>
+    <v-dialog v-model="callModal" persistent max-width="500">
+      <v-card color="danger">
+        <v-card-title class="headline">Call Resources</v-card-title>
         <v-card-text>Body Text</v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -41,9 +41,9 @@
       </v-card>
     </v-dialog>
 
-    <v-dialog v-model="smsModal" persistent max-width="290">
+    <v-dialog v-model="smsModal" persistent max-width="500">
       <v-card>
-        <v-card-title class="headline">SMS Headline</v-card-title>
+        <v-card-title class="headline">SMS Resources</v-card-title>
         <v-card-text>Body Text</v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -52,9 +52,9 @@
       </v-card>
     </v-dialog>
 
-    <v-dialog v-model="webModal" persistent max-width="290">
+    <v-dialog v-model="webModal" persistent max-width="500">
       <v-card>
-        <v-card-title class="headline">Web Headline</v-card-title>
+        <v-card-title class="headline">Web Resources</v-card-title>
         <v-card-text>Body Text</v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
