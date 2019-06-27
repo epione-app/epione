@@ -31,34 +31,61 @@
     </v-speed-dial>
     
     <v-dialog v-model="callModal" persistent max-width="500">
-      <v-card color="danger">
-        <v-card-title class="headline">Call Resources</v-card-title>
-        <v-card-text>Body Text</v-card-text>
+      <v-card color="ternary" dark>
+        <v-card-title class="headline">Phone Resources</v-card-title>
+        <v-card-text>
+          <span class="justify-center title">Need Help?</span>
+          <p class="body">
+            Here's some web resources that we think will help. <br />
+            <strong>
+              If you or someone you know is in immediate danger of harming themselves or others,
+              please call your local health institution or emergency services.
+            </strong>
+          </p>
+        </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="green darken-1" flat @click="callModal = false">Dismiss</v-btn>
+          <v-btn outline @click="callModal = false">Dismiss</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
 
     <v-dialog v-model="smsModal" persistent max-width="500">
-      <v-card>
+      <v-card color="ternary" dark>
         <v-card-title class="headline">SMS Resources</v-card-title>
-        <v-card-text>Body Text</v-card-text>
+        <v-card-text>
+          <span class="justify-center title">Need Help?</span>
+          <p class="body">
+            Here's some SMS helplines that we think are a good fit. <br />
+            <strong>
+              If you or someone you know is in immediate danger of harming themselves or others,
+              please call the emergency services.
+            </strong>
+          </p>
+        </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="green darken-1" flat @click="smsModal = false">Dismiss</v-btn>
+          <v-btn outline @click="smsModal = false">Dismiss</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
 
     <v-dialog v-model="webModal" persistent max-width="500">
-      <v-card>
+      <v-card color="ternary" dark>
         <v-card-title class="headline">Web Resources</v-card-title>
-        <v-card-text>Body Text</v-card-text>
+        <v-card-text>
+          <span class="justify-center title">Need Help?</span>
+          <p class="body">
+            Here's some web resources that we think will help. <br />
+            <strong>
+              If you or someone you know is in immediate danger of harming themselves or others,
+              please call the emergency services.
+            </strong>
+          </p>
+        </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="green darken-1" flat @click="webModal = false">Dismiss</v-btn>
+          <v-btn outline @click="webModal = false">Dismiss</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>

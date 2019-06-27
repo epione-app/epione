@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/fonts/Roboto-Medium.90d16760.woff2"
   },
   {
-    "revision": "735ab4f94fbcd57074377afca324c813",
+    "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
     "url": "/robots.txt"
   },
   {
@@ -12,20 +12,20 @@ self.__precacheManifest = [
     "url": "/fonts/Roboto-Bold.b52fac2b.woff2"
   },
   {
-    "revision": "2e6d8c939a049110f975",
-    "url": "/js/about.9fd2b3eb.js"
+    "revision": "8a80d5f9a8116d54be63",
+    "url": "/js/about.818ed76d.js"
   },
   {
-    "revision": "2662eb3a34cb4ea919ce",
-    "url": "/js/coping.60982394.js"
+    "revision": "7a4d0f61429dfd53db59",
+    "url": "/js/coping.c5eb7daf.js"
   },
   {
     "revision": "c7e569f09b448f0bfdd2",
     "url": "/js/chunk-vendors.ff8890d5.js"
   },
   {
-    "revision": "ad09204d7fa042fa10f9",
-    "url": "/js/app.7baf8ec4.js"
+    "revision": "72caf9b4ea81716768b1",
+    "url": "/js/app.51e544c0.js"
   },
   {
     "revision": "e8eaae902c3a4dacb9a5062667e10576",
@@ -36,7 +36,7 @@ self.__precacheManifest = [
     "url": "/fonts/fa-regular-400.fc9c63c8.eot"
   },
   {
-    "revision": "190e04dc20dc5097c529d31d60bd9d9b",
+    "revision": "a53fae9c3afbfc82ea7cc2dced0663d9",
     "url": "/index.html"
   },
   {
@@ -68,8 +68,8 @@ self.__precacheManifest = [
     "url": "/fonts/fa-solid-900.acf50f59.ttf"
   },
   {
-    "revision": "c73eb1ceba3321a80a0aff13ad373cb4",
-    "url": "/fonts/Roboto-Light.c73eb1ce.woff"
+    "revision": "d3b47375afd904983d9be8d6e239a949",
+    "url": "/fonts/Roboto-Thin.d3b47375.woff"
   },
   {
     "revision": "ed2b8bf117160466ba6220a8f1da54a4",
@@ -124,48 +124,48 @@ self.__precacheManifest = [
     "url": "/fonts/Roboto-ThinItalic.8a96edbb.woff"
   },
   {
-    "revision": "d3b47375afd904983d9be8d6e239a949",
-    "url": "/fonts/Roboto-Thin.d3b47375.woff"
-  },
-  {
     "revision": "03783c5172ee1ad128c576bf88fac168",
     "url": "/fonts/fa-brands-400.03783c51.eot"
-  },
-  {
-    "revision": "83e114c316fcc3f23f524ec3e1c65984",
-    "url": "/fonts/Roboto-MediumItalic.83e114c3.woff"
-  },
-  {
-    "revision": "35b07eb2f8711ae08d1f58c043880930",
-    "url": "/fonts/Roboto-Regular.35b07eb2.woff"
-  },
-  {
-    "revision": "4fe0f73cc919ba2b7a3c36e4540d725c",
-    "url": "/fonts/Roboto-BoldItalic.4fe0f73c.woff"
-  },
-  {
-    "revision": "d26871e8149b5759f814fd3c7a4f784b",
-    "url": "/fonts/Roboto-Light.d26871e8.woff2"
-  },
-  {
-    "revision": "13ec0eb5bdb821ff4930237d7c9f943f",
-    "url": "/fonts/Roboto-MediumItalic.13ec0eb5.woff2"
   },
   {
     "revision": "13efe6cbc10b97144a28310ebdeda594",
     "url": "/fonts/Roboto-LightItalic.13efe6cb.woff"
   },
   {
-    "revision": "94008e69aaf05da75c0bbf8f8bb0db41",
-    "url": "/fonts/Roboto-BoldItalic.94008e69.woff2"
+    "revision": "f75569f8a5fab0893fa712d8c0d9c3fe",
+    "url": "/fonts/Roboto-BlackItalic.f75569f8.woff2"
+  },
+  {
+    "revision": "35b07eb2f8711ae08d1f58c043880930",
+    "url": "/fonts/Roboto-Regular.35b07eb2.woff"
+  },
+  {
+    "revision": "d26871e8149b5759f814fd3c7a4f784b",
+    "url": "/fonts/Roboto-Light.d26871e8.woff2"
   },
   {
     "revision": "50d75e48e0a3ddab1dd15d6bfb9d3700",
     "url": "/fonts/Roboto-Bold.50d75e48.woff"
   },
   {
-    "revision": "f75569f8a5fab0893fa712d8c0d9c3fe",
-    "url": "/fonts/Roboto-BlackItalic.f75569f8.woff2"
+    "revision": "4fe0f73cc919ba2b7a3c36e4540d725c",
+    "url": "/fonts/Roboto-BoldItalic.4fe0f73c.woff"
+  },
+  {
+    "revision": "94008e69aaf05da75c0bbf8f8bb0db41",
+    "url": "/fonts/Roboto-BoldItalic.94008e69.woff2"
+  },
+  {
+    "revision": "c73eb1ceba3321a80a0aff13ad373cb4",
+    "url": "/fonts/Roboto-Light.c73eb1ce.woff"
+  },
+  {
+    "revision": "13ec0eb5bdb821ff4930237d7c9f943f",
+    "url": "/fonts/Roboto-MediumItalic.13ec0eb5.woff2"
+  },
+  {
+    "revision": "83e114c316fcc3f23f524ec3e1c65984",
+    "url": "/fonts/Roboto-MediumItalic.83e114c3.woff"
   },
   {
     "revision": "cc2fadc3928f2f223418887111947b40",
@@ -184,7 +184,7 @@ self.__precacheManifest = [
     "url": "/css/chunk-vendors.188b199a.css"
   },
   {
-    "revision": "00d5dcb152513e64fb822c0d4b2f6805",
+    "revision": "d77185004f836adc6bdb7c5a7be17545",
     "url": "/cordova.js"
   }
 ];

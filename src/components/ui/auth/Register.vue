@@ -48,6 +48,15 @@
           type="password"
           :rules="[v => this.password == v || 'Your password does not match']"
         ></v-text-field>
+        <v-checkbox
+          v-model="privacy"
+          prepend-icon="fa-lock"
+          name="privacy"
+          label = "Do you consent to the use of your name for personalization purposes?" 
+          id="verify_privacy"
+          :rules="[v => !!v == true || 'You must consent in order to proceed.']"
+          >
+        </v-checkbox>
       </v-form>
     </v-card-text>
     <v-card-actions>
@@ -67,6 +76,7 @@ export default {
     uname: "",
     email: "",
     password: "",
+    privacy: false,
   }),
   props: {
     source: String
