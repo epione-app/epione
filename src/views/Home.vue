@@ -32,7 +32,8 @@
           </v-card-title>
         <v-card-text class="body justify-center font-weight-light-italic">
           {{
-            Object.keys(this.userJournals).length
+            // is userJournals truthy? ie: exists or has a value
+            this.userJournals ? Object.keys(this.userJournals).length : 0
           }}
         </v-card-text>
       </v-card>

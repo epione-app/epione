@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["coping"],{1955:function(n,e,t){"use strict";t.r(e);var c=function(){var n=this,e=n.$createElement,t=n._self._c||e;return t("v-container",[t("v-layout",{attrs:{"align-center":"","justify-center":""}},[t("v-card",{},[t("v-card-title",[t("v-icon",[n._v("fa-life-ring")])],1),t("v-card-text",[n._v("\n        Coping Hub - Placeholder\n      ")])],1)],1)],1)},r=[],a={},i=a,l=t("2877"),o=Object(l["a"])(i,c,r,!1,null,null,null);e["default"]=o.exports}}]);
-//# sourceMappingURL=coping.c5eb7daf.js.map

@@ -13,8 +13,9 @@ export default new Vuex.Store({
   getters: {
     "user": (state) => { return state.user; },
     "userName": (state) => { return state.user == null ? "" : state.user.displayName; },
-    "userJournals": (state) => { return state.userDoc ? state.userDoc.journals : {} }
-
+    "userJournals": (state) => { return state.userDoc ? state.userDoc.journals : undefined },
+    // checks if our user document has been loaded, useful for progress spinners :D
+    "loaded": (state) => { return !!state.userDoc },
   },
   mutations: {
     setUser : (state, user) => {

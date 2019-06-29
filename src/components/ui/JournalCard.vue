@@ -1,23 +1,61 @@
 <template>
-  <v-card>
-    <v-card-title class="headline">{{ title }}</v-card-title>
-    <v-card-text>
-      <div class="truncate-text">{{ body }}</div>
-    </v-card-text>
-    <v-divider/>
-    <v-card-actions>
-      <span class="caption" color="info">
-        Created at: {{ 
-          timestamp 
-          ? timestamp.toLocaleDateString() + " @ " + timestamp.toLocaleTimeString() 
-          : "No timestamp available."
-          }}
-        </span>
-      <v-spacer />
-      <v-btn @click="deleteNote" outline color="accent">Delete Note</v-btn>
-      <v-btn color="primary">Edit Note</v-btn>
-    </v-card-actions>
-  </v-card>
+  <div>
+    <v-card>
+      <v-card-title class="headline">{{ title }}</v-card-title>
+      <v-card-text>
+        <div class="truncate-text">{{ body }}</div>
+      </v-card-text>
+      <v-divider/>
+      <v-card-actions>
+        <!-- timestamp for note creation, otherwise string will be shown -->
+        <span class="caption" color="info">
+          Created at: {{ 
+            timestamp 
+            ? timestamp.toLocaleDateString() + " @ " + timestamp.toLocaleTimeString() 
+            : "No timestamp available."
+            }}
+          </span>
+        <v-spacer />
+        <v-btn @click="deleteNote" outline color="accent">Delete Note</v-btn>
+        <v-btn @click="openEditDialog" color="primary">Edit Note</v-btn>
+      </v-card-actions>
+    </v-card>
+    <v-dialog v-model="editNoteDialog" persistent max-width="500">
+      <v-card>
+        <v-card-title class="headline">Edit Note</v-card-title>
+        <v-card-text>
+          <v-form>
+            <v-text-field
+            required
+            solo
+            v-model="editTitle"
+            name="editTitle"
+            label="Change Title"
+            type="text"></v-text-field>
+            <v-textarea
+            required
+            outline
+            v-model="editBody"
+            name="editBody"
+            label="Change Entry"
+            type="text"
+            rows=5
+            auto-grow
+            ></v-textarea>
+          </v-form>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn 
+            outline 
+            @click="editNoteDialog = false" 
+            color="accent">
+            Cancel</v-btn>
+          <v-btn @click="editNote" color="primary">Save</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+  </div>
 </template>
 
 <script>
@@ -26,8 +64,15 @@ import firebase from 'firebase/app'
 import { firestore } from '@/plugins/firebase.js';
 
 export default {
+  data() {
+    return {
+    editTitle: null,
+    editBody: null,
+    editNoteDialog: false,
+    }
+  },
   props: {
-    entry: undefined
+    entry: undefined,
   },
   computed: {
     ...mapGetters(["user"]),
@@ -53,21 +98,29 @@ export default {
         { merge : true }
       )
     },
-    /// TODO : Implement edit button functionality
-    // editNote: function () {
-    //   var journals = {};
-    //   journals[this.id] = {
-    //     title: '',
-    //     body: '',
-    //   }
+    openEditDialog: function() {
+      this.editTitle = this.title;
+      this.editBody = this.body;
+      this.editNoteDialog = true;
+    },
+    editNote: function () {
+      firestore.collection('users')
+      .doc(this.user.uid)
+      .set(
+        { 
+          journals: {
+            [this.id]: {
+              title: this.editTitle,
+              body: this.editBody,
+            }
+          }
+        },
+        { merge : true }
+      );
 
-    //   firestore.collection('users')
-    //   .doc(this.user.id)
-    //   .set(
-    //     { journals },
-    //     { merge : true }
-    //   )
-    // }
+      this.editNoteDialog = false;
+    },
+
   },
 };
 </script>

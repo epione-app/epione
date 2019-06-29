@@ -14,7 +14,24 @@
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn outline @click="newNoteDialog = true">New Note</v-btn>
+            <v-btn
+              outline
+              @click="createNewNote"
+              :loading="!loaded"
+              :disabled="!loaded"
+            >
+              New Note
+              <template v-slot:loader>
+                <span>
+                  <v-progress-circular
+                    indeterminate
+                    :size="15"
+                    :width="2"
+                  />
+                  Loading...
+                </span>
+              </template>
+            </v-btn>
           </v-card-actions>
         </v-card>
       </v-flex>
@@ -59,13 +76,11 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
-    <div class="text-xs-center">
+    <div class="text-xs-center" v-if="pages > 1">
       <v-pagination 
         round 
         v-model="page" 
-        :length="5" 
-        @next="this.page + 1" 
-        @prev="this.page - 1" 
+        :length="pages"
       />
     </div>
   </v-container>
@@ -77,29 +92,53 @@ import firebase from 'firebase/app'
 import { firestore }from '@/plugins/firebase.js';
 import { mapGetters } from "vuex";
 
+const numPerPage = 6;
+
 export default {
   data () {
     return {
       newNoteDialog: false,
       name: "",
       entry: "",
-      page: 1,
+      page: parseInt(this.$route.params.page) || 1,
     }
   },
-  computed: {
-    ...mapGetters(["userJournals", "user"]),
-    page: function() {
-      return this.$route.params.page || 1;
+  watch: {
+    // whenever question changes, this function will run
+    page: function (newPage, oldPage) {
+      if (oldPage == newPage) return;
+      this.$router.replace({ name: this.$route.name, params: { page: newPage } })
     },
+    entries: function(newEntries, oldEntries) {
+      if (newEntries.length == 0 && this.page > this.pages) {
+        this.page = this.pages;
+      }
+    },
+  },
+  computed: {
+    ...mapGetters(["userJournals", "user", "loaded"]),
     entries: function() {
       return this.userJournals ? 
       // pagination change, still wip
-      Object.entries(this.userJournals).slice(((this.page - 1) * 6), (this.page * 6)) 
+      Object.entries(this.userJournals).slice(
+        ((this.page - 1) * numPerPage), (this.page * numPerPage)
+      ) 
       : [];
     },
+    pages: function() {
+      if (!this.userJournals) return 1;
+      return Math.max(
+        1,
+        Math.ceil(
+          Object.keys(this.userJournals).length / numPerPage
+        )
+      );
+    }
   },
   methods: {
     createNewNote: function() {
+      this.name = "";
+      this.entry = "";
       this.newNoteDialog = true;
     },
     submitNewNote: function() {

@@ -5,8 +5,6 @@ import Home from '@/views/Home.vue';
 import Auth from '@/views/Auth.vue';
 import Login from '@/components/ui/auth/Login.vue';
 import Register from '@/components/ui/auth/Register.vue';
-import JournalEntry from '@/views/journal/JournalEntry.vue';
-import JournalHome from '@/views/journal/JournalHome.vue';
 import Error404 from '@/views/Error404.vue';
 import { auth } from '@/plugins/firebase.js';
 import { register } from 'register-service-worker';
@@ -14,7 +12,7 @@ import { register } from 'register-service-worker';
 Vue.use(Router)
 
 const router = new Router({
-  mode: process.env.CORDOVA_PLATFORM ? 'hash' : 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes: [
     {
@@ -25,11 +23,10 @@ const router = new Router({
         requiresAuth: true,
       }
     },
-    //{ path: '/journal', redirect: { name: 'journalHome', params: { page: 1 } } },
     {
       path: '/journal/:page(\\d+)?',
       name: 'journalHome',
-      component: () => import(/* webpackChunkName: "journal" */ './views/journal/JournalHome.vue'),
+      component: () => import('./views/journal/JournalHome.vue'),
       meta: {
         requiresAuth: true,
       }
@@ -37,7 +34,7 @@ const router = new Router({
     {
       path: '/journal/entry/:id',
       name: 'journalEntry',
-      component: () => import(/* webpackChunkName: "journal" */ './views/journal/JournalEntry.vue'),
+      component: () => import('./views/journal/JournalEntry.vue'),
       meta: {
         requiresAuth: true,
       }
@@ -45,18 +42,10 @@ const router = new Router({
     {
       path: '/coping',
       name: 'copingHome',
-      component: () => import(/* webpackChunkName: "coping" */ './views/CopingHome.vue'),
+      component: () => import('./views/CopingHome.vue'),
       meta: {
         requiresAuth: true,
       }
-    },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     },
     {
       path: '/auth',
