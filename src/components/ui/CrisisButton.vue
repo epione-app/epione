@@ -11,21 +11,21 @@
       transition="slide-y-reverse-transition"
     >
       <template v-slot:activator>
-        <v-btn v-model="fab" color="primary" dark fab>
+        <v-btn v-model="fab" color="ternary" dark fab>
           <v-icon>fa-hands-helping</v-icon>
           <v-icon>fa-times-circle</v-icon>
         </v-btn>
       </template>
 
-      <v-btn fab small dark color="info" @click="callModal=true">
+      <v-btn fab small dark color="ternary" @click="callModal=true">
         <v-icon>fa-phone-alt</v-icon>
       </v-btn>
 
-      <v-btn fab small dark color="info" @click="smsModal=true">
+      <v-btn fab small dark color="ternary" @click="smsModal=true">
         <v-icon>fa-sms</v-icon>
       </v-btn>  
       
-      <v-btn fab small dark color="info" @click="webModal=true">
+      <v-btn fab small dark color="ternary" @click="webModal=true">
         <v-icon>fa-globe-asia</v-icon>
       </v-btn>
     </v-speed-dial>

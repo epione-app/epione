@@ -78,7 +78,7 @@
     </v-dialog>
     <div class="text-xs-center" v-if="pages > 1">
       <v-pagination 
-        round 
+        circle 
         v-model="page" 
         :length="pages"
       />
