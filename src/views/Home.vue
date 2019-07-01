@@ -18,6 +18,11 @@
               This is the minimum viable product for our Hot Topic in Software project! <br />
               Still very broken, still very WIP <br />
               Our core functionalities made it in in time though! :D <br />
+              <strong>
+                This is not medical help, only advice on how to cope.
+                if you require medical assistance, 
+                please visit your local heath service.
+              </strong>
             </div>
           </v-card-text>
         </v-card>
@@ -49,7 +54,10 @@
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="primary">
+            <v-btn 
+              href="https://github.com/epione-app/epione" 
+              color="primary"
+            >
               <v-icon left>fab fa-github-square</v-icon>
               <span>Fork us</span>
             </v-btn>

@@ -107,10 +107,10 @@ router.beforeEach((to, from, next) => {
 
   // if a user isn't logged in and tries to access a page with auth required,
   // redirect to the login page.
-  if (requiresAuth && !user) { next ('/auth/login') }
-  // if an authed user trys to access a page that doesn't require auth, redirect to
+  if (requiresAuth && !user) { next ({ name: 'login' }) }
+  // if an authed user trys to access a page that that requires being logged out, redirect to
   // the home page
-  else if (requiresAnon && user) { next ('/home') } 
+  else if (requiresAnon && user) { next ({ name: 'home' }) } 
   // else, go to the page
   else {  next(); }
 });
