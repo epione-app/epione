@@ -42,11 +42,12 @@
               please call your local health institution or emergency services.
             </strong>
           </p>
-          <ul>
-            <li><a href="tel:0800543354">Lifeline Phoneline (0800543354)</a></li>
-            <li><a href="tel:0800376633">outhline (0800376633)</a></li>
-            <li><a href="tel:0800726666">Samaritans Phoneline (0800726666)</a></li>
-            <li><a href="tel:0800111757">The Lowdown (0800111757)</a></li>
+          <ul color="white">
+            <!-- NOTE: tel: protocol does not work on web for now -->
+            <li><a href="tel:0800543354">Lifeline Phoneline (0800 543 354)</a></li>
+            <li><a href="tel:0800376633">Youthline (0800 376 633)</a></li>
+            <li><a href="tel:0800726666">Samaritans Phoneline (0800 726 666)</a></li>
+            <li><a href="tel:0800111757">The Lowdown (0800 111 757)</a></li>
           </ul>
         </v-card-text>
         <v-card-actions>
@@ -69,8 +70,9 @@
             </strong>
           </p>
           <ul>
-            <li><a href="sms:4357"> Lifeline SMS Hotline (4357)</a></li>
-            <li><a href="sms:5626">The Lowdown SMS Hotline (5626)</a></li>
+            <!-- NOTE: sms: protocol does not work on web for now -->
+            <li><a href="sms:4357"> Lifeline SMS Hotline (SMS 4357)</a></li>
+            <li><a href="sms:5626">The Lowdown SMS Hotline (SMS 5626)</a></li>
           </ul>
         </v-card-text>
         <v-card-actions>
@@ -93,10 +95,8 @@
             </strong>
           </p>
           <ul>
-            <li><a></a></li>
-            <li><a></a></li>
-            <li><a></a></li>
-            <li><a></a></li>
+            <li><a href="https://thelowdown.co.nz/">The Lowdown</a></li>
+            <li><a href="https://www.youthline.co.nz/">Youthline</a></li>
           </ul>
         </v-card-text>
         <v-card-actions>
@@ -121,3 +121,11 @@ export default {
   props: { authed: Boolean }
 };
 </script>
+
+<!-- scoped style for vue single-file components -->
+
+<style scoped>
+a {
+  color: #fff;
+}
+</style>

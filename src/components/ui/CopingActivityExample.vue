@@ -1,7 +1,6 @@
 <!-- Example coping hub activity -->
 <template>
     <v-card 
-        ripple
     >
         <v-img 
             :src='"https://dummyimage.com/300x200/"+colour+"/000000.png"'
