@@ -52,3 +52,6 @@ src/firebase_conf.json
 
 # Jest coverage reports
 /coverage/
+
+# didn't realise /src-cordova/www was a build directory -_-
+/src-cordova/www

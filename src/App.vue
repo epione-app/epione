@@ -1,33 +1,49 @@
+<!-- root element -->
 <template>
   <v-app>
-    <v-toolbar app>
-        <v-toolbar-title class="headline text-uppercase">
-          <span class="font-weight-light">Epione;</span>
-        </v-toolbar-title>
-        <v-spacer></v-spacer>
-      </v-toolbar>
+    <v-toolbar app >
+      <v-toolbar-title class="headline text-uppercase">
+        <span class="font-weight-light">Epione;</span>
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <AppBarItems :authed="authed" />
+    </v-toolbar>
     <v-content>
-      <router-view/>
+      <v-slide-y-reverse-transition mode="out-in">
+        <router-view/>
+      </v-slide-y-reverse-transition>
+      <CrisisButton :authed="authed"/>
     </v-content>
-    <CrisisButton />
- </v-app>
+    <BottomNav :authed="authed"/>
+  </v-app>
 </template>
 
 <script>
-import CrisisButton from '@/components/CrisisButton.vue'
+import CrisisButton from "@/components/ui/CrisisButton.vue";
+import AppBarItems from "@/components/ui/AppBarItems.vue";
+import BottomNav from '@/components/ui/BottomNav.vue';
+import { mapGetters } from 'vuex';
+
+import firebase from '@/plugins/firebase.js';
 
 export default {
-  name: 'App',
-  data () {
+  name: "App",
+  data: () => {
     return {
       fab: false
-    }
+    };
   },
-  created : function () {
-    this.$store.dispatch("bindDummy");
+  computed : {
+    authed: function() { return !!this.user; },
+    ...mapGetters([
+      'user',
+      'userName'
+    ])
   },
   components: {
-    CrisisButton
+    CrisisButton,
+    AppBarItems,
+    BottomNav,
   }
-}
+};
 </script>

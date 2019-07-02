@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import * as fb from 'firebase/app'
+import fb from 'firebase/app'
 import "firebase/auth"
 import "firebase/firestore"
 import config from '../firebase_conf.json'
